@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+
+
+    <style>
+    body{
+      overflow-x: hidden;
+    }
+        .dropdown:hover .dropdown-menu {
+          display: block;
+        }
+      /* to eliminate the default down icon on the drowdown */
+        .dropdown::after {
+  display: none;
+}
+/* to hide the side nav on small screen  and to use left modal as navigation bar*/
+@media (max-width: 991px) {
+  .side-nav{
+    display: none;
+  }
+}
+
+ /* Custom CSS for modal */
+ .modal-dialog {
+      width: 40% !important;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      margin: 0;
+  
+    }
+
+    .modal-content {
+      min-height: 100vh;
+    }
+
+    .image-container {
+      max-height: 60vh;
+    }
+
+    .image-container img {
+      max-height: 100%;
+      width: auto;
+    }
+    .sid-links:hover{
+      background-color: #ccc;
+      color: #000;
+    }
+  </style>
+      </style>
+  </head>
+  <body>
+    
+    <header>
+      <nav class="navbar navbar-expand-lg p-1">
+        <div class="container-fluid">
+          <!-- this is a logo and home -->
+          <a class="navbar-brand" href="#">
+            <img src="image/logo-udemy.svg" style="height:30px">
+          </a>
+          <!-- This is a toggler button used to open  the navigational modal when the screen size is small -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- this is the navigation bar that will be shown on big screen -->
+          <div class="collapse navbar-collapse side-nav" id="navbarNavDarkDropdown">
+            <div class="navbar-nav  flex-grow-1">
+              <div class="nav-item dropdown ps-2 pe-1">
+                <button class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categories
+                </button>
+                <ul class="dropdown-menu mt-3">
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                 
+                 
+                </ul>
+              </div>                
+            <form class="flex-grow-1 d-flex rounded rounded-secondary rounded-pill " role="search">
+                  <button class="btn"  type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  <input class="form-control me-2  ps-5 rounded-pill" type="search" placeholder="Search" aria-label="Search">
+                </form>
+
+                <div class="dropdown">
+                  <button class="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Udemy Bussiness
+                  </button>
+                  <div class="dropdown-menu p-3 mt-3 text-center" style="width:300px">
+                    <h4>Get your team access to over 22,000 top Udemy courses, anytime, anywhere.</h4>
+                    <button class="btn btn-primary">Teach on Udemy</button>
+                    
+                  </div>
+                </div>
+
+                <div class="dropdown">
+                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Teach On Udemy
+                  </button>
+                  <div class="dropdown-menu p-3 mt-3 text-center" style="width:300px">
+                    <h4>Get your team access to over 22,000 top Udemy courses, anytime, anywhere.</h4>
+                    <button class="btn btn-primary">Teach on Udemy</button>
+                    
+                  </div>
+                 
+
+                </div>
+
+                <div class="dropdown">
+                  <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                  <div class="dropdown-menu p-3 text-center mt-3" style="width:200px">
+                    <h6>Your Cart is empty</h6>
+                    <button class="btn btn-primary">add to cart</button>
+                    
+                  </div>
+                </div>
+
+                <div>
+                  <button class="btn btn-secondary">Log in</button>
+                </div>
+                
+                <div>
+                  <button class="btn">Sign up</button>
+                </div>
+
+              </div>
+                
+            
+            </div>
+            
+          </div>
+        </div>
+      </nav>
+
+
+      <!-- this side navigation on small screen using Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <!-- Modal body -->
+        <div class="modal-body">
+          <!-- Add your content here -->
+          <h5>Modal Content</h5>
+          <ul class="nav flex-column">
+            <li class="sid-links nav-item"><a class="nav-link" href="#">Another action</a></li>
+            <li class="sid-links nav-item"><a class="nav-link" href="#">Another action</a></li>
+            <li class="sid-links nav-item"><a class="nav-link" href="#">Another action</a></li>
+            <li class="sid-links nav-item"><a class="nav-link" href="#">Another action</a></li>
+            <li class="sid-links nav-item"><a class="nav-link" href="#">Another action</a></li>
+            <li class="sid-links nav-item"><a class="nav-link" href="#">Another action</a></li>
+            <li class="sid-links nav-item"><a class="nav-link" href="#">Another action</a></li>
+            <li class="sid-links nav-item"><a class="nav-link" href="#">Another action</a></li>
+            <li class="sid-links nav-item"><a class="nav-link" href="#">Another action</a></li>
+            
+         
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+     </header>
+
+     <main>
+    <section class="section-hero mb-5">
+    <div id="carouselExampleDark" class=" carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3000">
+            <div class="image-container">
+            <img src="image/udemy_hero.png" class="img-fluid h-100" alt="...">
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="1000">
+            <div class="image-container">
+            <img src="image/udemy-hero-img 2.jpg" class="img-fluid h-100" alt="...">
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="1000">
+            <div class="image-container">
+            <img src="image/udemy-hero-img 3.jpg" class="img-fluid h-100" alt="...">
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section-courses">
+      <div class="container-fluid ms-3">
+        <h2>A broad selection of courses</h2>
+        <p>Choose from over 210,000 online video courses with new additions published every month</p>
+      <ul class="nav nav-tabs" id="myTabs">
+        <li class="nav-item">
+          <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1">Python</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2">Excel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3">Web Developement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab4">Drawing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab5">javaScript</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab6">Data Science</a>
+        </li>
+      </ul>
+     
+     
+      <div class="tab-content mt-5 mb-5" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+
+          <div class="mt-3 mb-5">
+            <h2>Expand your career opportunities with Python</h2>
+            <p>
+              Take one of Udemy’s range of Python courses and learn how to code using this incredibly useful language. Its simple syntax and readability makes Python perfect for Flask, Django, data science, and machine learning. You’ll learn how to build everything from games to sites to apps. Choose from a range of courses that will appeal to
+            </p>
+            <button class="btn btn-primary" type="button">Explore Python</button>
+            </div>
+
+          <div id="carouselExample" class="carousel carousel-dark slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                
+                <div class="row mb-5 gx-4 gy-5 ">
+                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                    <div class="card text-center">
+                      <img src="image/python img 2.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        
+                      </div>
+                    </div>
+                    </div>
+      
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                      <div class="card text-center">
+                        <img src="image/python-img 1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          
+                        </div>
+                      </div>
+                      </div>
+      
+                      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                        <div class="card text-center">
+                          <img src="image/python img 3.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            
+                          </div>
+                        </div>
+                        </div>
+      
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                          <div class="card text-center">
+                            <img src="image/python-img 8.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              
+                            </div>
+                          </div>
+                          </div>
+                          </div>
+
+
+              </div>
+              <div class="carousel-item">
+                <div class="row mb-5 gx-4 gy-5 ">
+
+
+                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                    <div class="card text-center">
+                      <img src="image/python-img 8.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                      <div class="card text-center">
+                        <img src="image/python-img 6.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          
+                        </div>
+                      </div>
+                      </div>
+
+                      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                        <div class="card text-center">
+                          <img src="image/python img 2.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            
+                          </div>
+                        </div>
+                        </div>
+                </div>
+
+
+              </div>
+              <div class="carousel-item">
+                
+                <div class="row mb-5 gx-4 gy-5 ">
+                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                    <div class="card text-center">
+                      <img src="image/python img 2.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        
+                      </div>
+                    </div>
+                    </div>
+      
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                      <div class="card text-center">
+                        <img src="image/python-img 1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          
+                        </div>
+                      </div>
+                      </div>
+      
+                      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                        <div class="card text-center">
+                          <img src="image/python img 3.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            
+                          </div>
+                        </div>
+                        </div>
+      
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                          <div class="card text-center">
+                            <img src="image/python-img 8.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              
+                            </div>
+                          </div>
+                          </div>
+                </div>
+
+
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+
+
+        
+          <!-- <div class="row mb-5 gx-4 gy-5 ">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+              <div class="card text-center">
+                <img src="image/python img 2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  
+                </div>
+              </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                <div class="card text-center">
+                  <img src="image/python-img 1.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    
+                  </div>
+                </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                  <div class="card text-center">
+                    <img src="image/python img 3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      
+                    </div>
+                  </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                    <div class="card text-center">
+                      <img src="image/python-img 8.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                      <div class="card text-center">
+                        <img src="image/python-img 6.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          
+                        </div>
+                      </div>
+                      </div>
+
+                      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                        <div class="card text-center">
+                          <img src="image/python img 2.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            
+                          </div>
+                        </div>
+                        </div>
+
+            </div> -->
+
+          
+
+        
+
+                    
+
+
+          
+          </div>
+        </div>
+
+
+
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+          <div class="mt-3 mb-5">
+            <h2>Analyze and visualize data with Excel</h2>
+            <p>
+              Take a Microsoft Excel course from Udemy, and learn how to use this industry-standard software. Real-world experts will show you the basics like how to organize data into sheets, rows and columns, and advanced techniques like creating complex dynamic formulas. Both small businesses and large companies use Excel to
+            </p>
+            <button class="btn btn-primary" type="button">Explore Excel</button>
+            </div>
+          <div class="row mb-5 gx-4 gy-5 ">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+              <div class="card text-center">
+                <img src="image/python img 2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  
+                </div>
+              </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                <div class="card text-center">
+                  <img src="image/excel 1.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    
+                  </div>
+                </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                  <div class="card text-center">
+                    <img src="image/excel 3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      
+                    </div>
+                  </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                    <div class="card text-center">
+                      <img src="image/excel 5.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                      <div class="card text-center">
+                        <img src="image/excel 6.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          
+                        </div>
+                      </div>
+                      </div>
+
+                      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">            
+                        <div class="card text-center">
+                          <img src="image/excel 7.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            
+                          </div>
+                        </div>
+                        </div>
+
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+          <h3>Tab 3 Content</h3>
+          <p>This is the content of Tab 3.</p>
+        </div>
+      </div>
+
+      </div>
+      
+    </section>
+ 
+</main>
+
+      
+
+     
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+
+
+      
+    
+  </body>
+</html>
